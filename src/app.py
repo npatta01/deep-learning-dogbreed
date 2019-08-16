@@ -13,13 +13,13 @@ import torch
 import json
 
 with open("src/config.yaml", 'r') as stream:
-    APP_CONFIG = yaml.load(stream)
+    APP_CONFIG = yaml.full_load(stream)
 
 app = Flask(__name__)
 
 
 def load_model(path=".", model_name="model.pkl"):
-    learn = load_learner(path, fname=model_name)
+    learn = load_learner(path, file=model_name)
     return learn
 
 
